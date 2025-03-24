@@ -20,11 +20,12 @@ public class UIStatus : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
     public void SetData(Character player)
     {
-        _statusValue[0].text = $" {player._atk}";
-        _statusValue[1].text = $" {player._def}";
-        _statusValue[2].text = $" {player._hp}";
-        _statusValue[3].text = $" {player._critRate}";
+        _statusValue[0].text = $" {player.Atk}";
+        _statusValue[1].text = $" {player.Def}";
+        _statusValue[2].text = $" {player.Hp}";
+        _statusValue[3].text = $" {player.CritRate}";
     }
 }

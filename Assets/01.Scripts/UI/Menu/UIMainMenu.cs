@@ -39,9 +39,9 @@ public class UIMainMenu : MonoBehaviour
 
     public void SetData(Character player)
     {
-        _txt_Gold.text = $" {player._gold}";
-        _txt_LvValue.text = $"{player._lv}";
-        _txt_Exp.text = $"{player._curExp} / {player._maxExp}";
-        _bg_Exp.value = player._curExp;
+        _txt_Gold.text = $" {player.Gold}";
+        _txt_LvValue.text = $"{player.Lv}";
+        _txt_Exp.text = $"{player.CurExp} / {player.MaxExp}";
+        _bg_Exp.value = player.CurExp;
     }
 }

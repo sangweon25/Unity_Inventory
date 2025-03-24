@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class UIInventory : MonoBehaviour
 {
@@ -15,13 +14,16 @@ public class UIInventory : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] Button _btn_Back;
+    [SerializeField] Button _btn_NewItem;
 
     private UISlot prefab;
+    [SerializeField] List<Item> _items;
 
     private void Start()
     {
         prefab = Resources.Load<UISlot>("Prefabs/Slot");
         _btn_Back.onClick.AddListener(CloseInventory);
+        _btn_NewItem.onClick.AddListener(AddItem);
         InitInventoryUI();
         UpdateCurCapacity();
     }
@@ -40,9 +42,21 @@ public class UIInventory : MonoBehaviour
                 _slots.Add(Instantiate(prefab));
                 _slots[i].transform.SetParent(_slotPrefab);
                 _slots[i].name = $"Slot ({i})";
+                int rand = Random.Range(0, _items.Count);
+                _slots[i].SetItem(_items[rand]);
 
             }
         }
+    }
+
+    public void AddItem()
+    {
+        _slots.Add(Instantiate(prefab));
+        _slots[_slots.Count-1].transform.SetParent(_slotPrefab);
+        _slots[_slots.Count-1].name = $"Slot ({_slots.Count-1})";
+        int rand = Random.Range(0, _items.Count);
+        _slots[_slots.Count - 1].SetItem(_items[rand]);
+        UpdateCurCapacity();
     }
     
     private void UpdateCurCapacity()

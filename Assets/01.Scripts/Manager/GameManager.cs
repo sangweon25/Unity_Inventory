@@ -13,9 +13,10 @@ public class GameManager : Singleton<GameManager>
             _player = FindObjectOfType<Character>();
             if (_player == null)
             {
-                string name = typeof(Character).ToString();
-                var newObj = new GameObject(name);
+                string _name = typeof(Character).ToString();
+                var newObj = new GameObject();
                 _player = newObj.AddComponent<Character>();
+                _player.name = _name;
             }
         }
     }
@@ -25,7 +26,7 @@ public class GameManager : Singleton<GameManager>
         SetData();
     }
 
-    void SetData()
+    public void SetData()
     {
         UIManager.Instance.UIMainMenu.SetData(Player);
         UIManager.Instance.UIStatus.SetData(Player);
