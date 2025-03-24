@@ -1,18 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIMainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Text")]
+    [SerializeField] TextMeshProUGUI _txt_Gold;
+    [SerializeField] TextMeshProUGUI _txt_LvValue;
+    [SerializeField] TextMeshProUGUI _txt_Exp;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Slider")]
+    [SerializeField] Slider _bg_Exp;
+
+    [Header("Button")]
+    [SerializeField] Button _btn_Status;
+    [SerializeField] Button _btn_Inventory;
+
+
 }

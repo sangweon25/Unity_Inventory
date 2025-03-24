@@ -1,18 +1,13 @@
-using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIStatus : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Text")]
+    [SerializeField] List<TextMeshProUGUI> _statusValue;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Header("Button")]
+    [SerializeField] Button _btn_Back;
 }

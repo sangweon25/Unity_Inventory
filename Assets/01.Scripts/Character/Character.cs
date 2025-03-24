@@ -1,18 +1,14 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private int _atk;
+    private int _def;
+    private int _hp;
+    private int _critRate;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    private int _lv;
+    private int _curExp;
+    private int _maxExp;
+
 }
