@@ -13,4 +13,14 @@ public class UIInventory : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] Button _btn_Back;
+
+    private void Start()
+    {
+        _btn_Back.onClick.AddListener(CloseInventory);
+    }
+
+    public void CloseInventory()
+    {
+        this.gameObject.SetActive(false);
+    }
 }

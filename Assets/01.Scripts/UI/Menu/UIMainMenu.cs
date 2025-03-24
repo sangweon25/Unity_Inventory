@@ -16,5 +16,24 @@ public class UIMainMenu : MonoBehaviour
     [SerializeField] Button _btn_Status;
     [SerializeField] Button _btn_Inventory;
 
+    private void Start()
+    {
+        _btn_Status.onClick.AddListener(OpenStatus);
+        _btn_Inventory.onClick.AddListener(OpenInventory);
+    }
 
+    public void OpenMainMenu()
+    {
+        UIManager.Instance.UIMainMenu.gameObject.SetActive(true);
+    }
+
+    public void OpenStatus()
+    {
+        UIManager.Instance.UIStatus.gameObject.SetActive(true);
+    }
+
+    public void OpenInventory()
+    {
+        UIManager.Instance.UIInventory.gameObject.SetActive(true);
+    }
 }

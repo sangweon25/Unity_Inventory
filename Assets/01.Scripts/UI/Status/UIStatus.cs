@@ -10,4 +10,14 @@ public class UIStatus : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] Button _btn_Back;
+
+    private void Start()
+    {
+        _btn_Back.onClick.AddListener(CloseStatus);
+    }
+
+    public void CloseStatus()
+    {
+        this.gameObject.SetActive(false);
+    }
 }
