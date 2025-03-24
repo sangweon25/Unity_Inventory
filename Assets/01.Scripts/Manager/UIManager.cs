@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] UIMainMenu _uIMainMenu;
+    [SerializeField] UIStatus _uiStatus;
+    [SerializeField] UIInventory _uIInventory;
+
+    public UIMainMenu UIMainMenu { get { return _uIMainMenu; }}
+    public UIStatus UIStatus { get { return _uiStatus; } }
+    public UIInventory UIInventory { get { return _uIInventory; } }
+
+    protected override void Init()
     {
-        
+        base.Init();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
