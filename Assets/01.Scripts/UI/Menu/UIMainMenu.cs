@@ -36,4 +36,12 @@ public class UIMainMenu : MonoBehaviour
     {
         UIManager.Instance.UIInventory.gameObject.SetActive(true);
     }
+
+    public void SetData(Character player)
+    {
+        _txt_Gold.text = $" {player._gold}";
+        _txt_LvValue.text = $"{player._lv}";
+        _txt_Exp.text = $"{player._curExp} / {player._maxExp}";
+        _bg_Exp.value = player._curExp;
+    }
 }
